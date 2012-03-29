@@ -89,7 +89,7 @@ module Roar
           def link(options, &block)
             links = find_links_definition || create_links
             
-            options = {:rel => options} if options.is_a?(Symbol)
+            options = {:rel => options} if options.is_a?(Symbol) || options.is_a?(String)
             links.rel2block << [options, block]
           end
           
